@@ -27,11 +27,8 @@ def create_number() -> list:
     secret_number_end = random.sample(sequence_list_rest, k = 3)
     
     secret_number = secret_number_start + secret_number_end
-<<<<<<< HEAD
 
     return secret_number
-=======
->>>>>>> eaa1a0da1dda7e562d5072d7d842d0caae860e36
     
 def guess_number():
     """ The function requests the user to type the number"""
@@ -41,8 +38,8 @@ def guess_number():
     
 
 
-# Kontrola vstupu
-def check_input(guess_number):
+def check_input(guess_number) -> bool:
+"""The function checks whether the user input is in line with the rules"""
     lenght = len(guess_number)
     if lenght != 4:
         print("The number must contain 4 digits! Try again")
