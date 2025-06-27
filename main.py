@@ -26,10 +26,13 @@ def create_number() -> list:
 
     return secret_number
     
-# Vyžádání vstupu od uživatele
 def guess_number():
-    guess_number = input("Enter a number:")
-    return guess_number
+    """ The function requests the user to type the number"""
+    attempt = input("Enter a number:")
+    print(attempt)
+    return attempt
+    
+
 
 # Kontrola vstupu
 def check_input(guess_number):
