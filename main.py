@@ -7,15 +7,23 @@ email: msornova@seznam.cz
 import random
 import time
 
-# Generování 4 místného čísla s omezeními
-def create_number():
+def create_number() -> list:
+    """
+    The function generates 4 digit number having below characteristics:
+    - first digit is not 0
+    - digits are unique
+    """
+
+    sequence_set_1digit = {1,2,3,4,5,6,7,8,9}
+    sequence_list_1digit = list(sequence_set_1digit)
+    secret_number_start = random.sample(sequence_list_1digit, k = 1)
     
-    incorrect_number = True
+    sequence_set_rest = {0,1,2,3,4,5,6,7,8,9}-set(secret_number_start)
+    sequence_list_rest = list(sequence_set_rest)
+    secret_number_end = random.sample(sequence_list_rest, k = 3)
     
-    while incorrect_number:
-        secret_number = random.sample([0,1,2,3,4,5,6,7,8,9], k = 4)
-        if secret_number[0] != 0: 
-            incorrect_number = False
+    secret_number = secret_number_start + secret_number_end
+
     return secret_number
     
 # Vyžádání vstupu od uživatele
@@ -82,6 +90,7 @@ print("Hi there!", "-"*47,
 
 # Tvorba čísla
 secret = create_number()
+print(type(secret))
 print(secret)
 
 # Spuštění času
